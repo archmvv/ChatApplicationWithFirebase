@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Little Ninja Chat</title>
+</head>
+<body>
+    <!-- container and title -->
+<div class="container my-4">
+    <h1 class="my-4 text-center">Ninja Chat</h1>
+
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+        <div class="my-2">Choose a chatroom:</div>
+        <button class="btn" id="general">#general</button>
+        <button class="btn" id="gaming">#gaming</button>
+        <button class="btn" id="music">#music</button>
+        <button class="btn" id="ninjas">#ninjas</button>
+    </div>
+
+    <!-- chat list / window -->
+    <div class="chat-window">
+        <ul class="chat-list list-group"></ul>
+    </div>
+    
+    <!-- new chat form -->
+    <form class="new-chat my-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Your message:</div>
+            </div>
+            <input type="text" id='message' class="form-control" required>
+            <div class="input-group-append">
+                <input type="submit" class="btn" value="send">
+            </div>
+        </div>
+    </form>
+    
+    <!-- update name form -->
+    <form class="new-name my-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Update name:</div>
+            </div>
+            <input type="text" id="name" class="form-control" required>
+            <div class="input-group-append">
+                <input type="submit" class="btn" value="update">
+            </div>
+        </div>
+        <div class="update-mssg"></div>
+    </form>
+
+
+
+</div>
+
+<script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDtU2L4h6PD-S7Rn3KOnemjZx8RW2S89Q8",
+    authDomain: "modern-js-d2ee4.firebaseapp.com",
+    databaseURL: "https://modern-js-d2ee4.firebaseio.com",
+    projectId: "modern-js-d2ee4",
+    storageBucket: "modern-js-d2ee4.appspot.com",
+    messagingSenderId: "427081224322",
+    appId: "1:427081224322:web:1bb4f88aff939da28aa49b",
+    measurementId: "G-733CEMQEKP"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+</script>
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+
+</body>
+</html>
